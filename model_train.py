@@ -43,13 +43,13 @@ comb_frame = comb_frame.replace({"[^A-Za-z0-9 ]+": ""}, regex=True)
 vectorizer = TfidfVectorizer(stop_words='english')
 X = vectorizer.fit_transform(comb_frame)
 
-# true_k, derived from elbow metho and confirmed from pluralsight's website
+# true_k, derived from elbow method and confirmed from pluralsight's website
 true_k = 8
 
 # usig SVD for LSA
-svd = TruncatedSVD(true_k)
-lsa = make_pipeline(svd, Normalizer(copy=False))
-X = lsa.fit_transform(X)
+# svd = TruncatedSVD(true_k)
+# lsa = make_pipeline(svd, Normalizer(copy=False))
+# X = lsa.fit_transform(X)
 
 # Running model with 15 different centroid initializations & maximum iterations are 500
 model = KMeans(n_clusters=true_k, init='k-means++', max_iter=500, n_init=15)
