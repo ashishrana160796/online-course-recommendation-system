@@ -100,7 +100,5 @@ pickle.dump(model, open(filename, 'wb'))
 
 # Limitations and Analysis of (code & data)
 
-# 1. Data limited only to course descriptions only, with few containing NaN values.
+# 1. Data limited only to course descriptions only, with few containing NaN values also. But, a combined approach for all columns containing text entries are used.
 # 2. Even, retired courses are used for training but they are not displayed as recommended courses. Around 900 courses are retired and they can't be recommended.
-# 3. 
-
