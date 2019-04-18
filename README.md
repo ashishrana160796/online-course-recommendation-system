@@ -3,6 +3,10 @@
 Built on data fetched from Pluralsight's course API fetched results. Refer, their API to use the recent most data.  
 Works with model trained on K-means unsupervised clustering algorithm on text data vectorized tf-idf algorithm.  
 
+# Architectural Diagram of Tool
+
+![Architecture of Recommendation Engine](recommendation_engine_architecture.png)  
+
 # Experiments
 
 __Experiment 1:__ Using k=8 as categories that are present on Pluralsight are eight in number. Just, a basic intuition to get started
