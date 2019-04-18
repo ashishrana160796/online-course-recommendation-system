@@ -25,8 +25,9 @@ course_df = course_df.dropna(how='any')
 # Remove 'll' ASAP. Anything ending with " 'll " has to be replaced.
 # Try removing extra text, keep important phrases & nouns
 
-# Pre-preprocessing step: remove words like we'll, you'll, they'll etc.
+# Pre-processing step: remove words like we'll, you'll, they'll etc.
 course_df['Description'] = course_df['Description'].replace({"'ll": " "}, regex=True)
+# Another Pre-processing step: Removal of '-' from the CourseId field
 course_df['CourseId'] = course_df['CourseId'].replace({"-": " "}, regex=True)
 
 # Combine three columns namely: CourseId, CourseTitle, Description
@@ -94,7 +95,7 @@ pickle.dump(model, open(filename, 'wb'))
 
 # 1. https://www.analyticsvidhya.com/blog/2018/06/comprehensive-guide-recommendation-engine-python/
 # 2. https://www.pluralsight.com/browse, For finding the original number of categories as '8' for all courses.
-# 3. https://stats.stackexchange.com/questions/155880/text-mining-how-to-cluster-texts-e-g-news-articles-with-artificial-intellige, A possible solution improvement from this thread. First try the svd approach[Currently, using similar to this approach only] and then doc2vec approach.
+# 3. https://stats.stackexchange.com/questions/155880/text-mining-how-to-cluster-texts-e-g-news-articles-with-artificial-intellige  , A possible solution improvement from this thread. First try the svd approach[Currently, using similar to this approach only] and then doc2vec approach.
 # 4. https://stackoverflow.com/questions/19197715/scikit-learn-k-means-elbow-criterion, Elbow method to find original value of 'k'.
 # 5. https://pythonprogramminglanguage.com/kmeans-text-clustering/, Key resource in-use for clustering.
 
